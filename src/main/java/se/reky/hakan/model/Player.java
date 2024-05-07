@@ -9,13 +9,13 @@ public class Player extends Actor {
     private String weapon;
     private int experience = 0;
     private boolean silverRingObtained;
+
     @Id
     @GeneratedValue
     private Long id;
 
     public Player(String name, int hp, int damage) {
         super(name, hp, damage);
-
     }
 
     public Player() {
@@ -38,7 +38,6 @@ public class Player extends Actor {
         this.id = id;
     }
 
-
     public int getExperience() {
         return experience;
     }
@@ -48,7 +47,6 @@ public class Player extends Actor {
     }
 
     public void addExperience(int experience) {
-
         this.experience += experience;
     }
 

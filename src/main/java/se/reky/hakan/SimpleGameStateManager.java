@@ -49,8 +49,6 @@ public class SimpleGameStateManager implements GameStateManager {
         }
     }
 
-
-
     @Override
     public void executeFight(Actor opponent) {
         ioHandler.output("\n------------------------------------------------------------------\n");
@@ -166,19 +164,21 @@ public class SimpleGameStateManager implements GameStateManager {
         player.addExperience(10);
     }
 
-    private void giveUp(){
+    private void giveUp() {
         ioHandler.output("\n------------------------------------------------------------------\n");
         ioHandler.output("You gave up cowardly. Your experience will be set to -1");
         ioHandler.output("\n\n           THE END                    ");
         ioHandler.output("\n------------------------------------------------------------------\n");
         player.setExperience(-1);
     }
+
     @Override
-    public void setPlayer(Player player){
+    public void setPlayer(Player player) {
         this.player = player;
     }
+
     @Override
-    public Player getPlayer(){
+    public Player getPlayer() {
         return player;
     }
 }

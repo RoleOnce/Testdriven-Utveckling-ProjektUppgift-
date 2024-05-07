@@ -42,7 +42,7 @@ public class Game {
         gameStateManager.executeTownGate();
     }
 
-    private Player getNewPlayer(){
+    private Player getNewPlayer() {
         return new Player();
     }
 }

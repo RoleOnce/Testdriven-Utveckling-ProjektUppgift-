@@ -61,6 +61,4 @@ public abstract class Actor {
     public void setName(String name) {
         this.name = name;
     }
-
-
 }

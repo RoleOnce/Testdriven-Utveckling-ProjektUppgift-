@@ -28,7 +28,7 @@ public class PlayerService {
         return player.orElseThrow(() -> new RuntimeException("Player not found with id: " + id));
     }
 
-    public List<Player> findAllPlayersSortedByExperience(){
+    public List<Player> findAllPlayersSortedByExperience() {
         return playerRepository.findAll(
                 Sort.by(Sort.Direction.DESC, "experience"));
     }
