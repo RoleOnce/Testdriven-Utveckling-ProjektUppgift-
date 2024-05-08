@@ -5,7 +5,10 @@ import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
 import java.util.List;
 
 @Disabled
@@ -67,5 +70,17 @@ public class PlayerControllerTest {
         WebElement element = driver.findElement(By.tagName("button"));
 
         Assertions.assertEquals("Logga in", element.getText());
+    }
+
+    @Test
+    public void clickOnLink() {
+        driver.get("http://localhost:8080/players");
+
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebElement nameLink = driver.findElement(By.cssSelector("body ul li a"));
+        nameLink.click();
+        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body h2")));
+
+        Assertions.assertEquals("Malcolm", element.getText());
     }
 }
